@@ -13,13 +13,13 @@ nest_asyncio.apply()
 
 # Load environment variables
 load_dotenv()
-RENDER_URL = os.getenv("RENDER_URL")
+#RENDER_URL = os.getenv("RENDER_URL")
 
 # Initialize LLM and MCP client
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=os.getenv("GOOGLE_API"))
 client = MultiServerMCPClient({
     "server": {
-        "url": f"{RENDER_URL}/mcp",
+        "url": "https://langgrapgh-mcp.onrender.com/mcp",
         "transport": "streamable_http",
     }
 })
