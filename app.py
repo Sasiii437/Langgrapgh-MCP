@@ -57,7 +57,8 @@ submit = st.button("🚀 Send")
 # Response area
 if submit and user_input.strip():
     with st.spinner("Thinking..."):
-        response = asyncio.create_task(run_agent(user_input))
-        response = asyncio.get_event_loop().run_until_complete(response)
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        response = loop.run_until_complete(run_agent(user_input))
         st.markdown("### 🧠 Agent Response")
         st.success(response)
