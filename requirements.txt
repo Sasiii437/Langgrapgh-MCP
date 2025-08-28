@@ -7,6 +7,5 @@ python-dotenv
 langchain_community
 youtube-transcript-api
 datetime
-re
 httpx
 asyncio
