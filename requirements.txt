@@ -9,3 +9,4 @@ youtube-transcript-api
 datetime
 httpx
 asyncio
+streamlit
