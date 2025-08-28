@@ -1,0 +1,13 @@
+langchain-mcp-adapters
+mcp
+langgraph
+langchain
+langchain-google-genai
+python-dotenv
+langchain_community
+youtube-transcript-api
+datetime
+os
+re
+httpx
+asyncio
