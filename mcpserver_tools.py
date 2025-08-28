@@ -10,8 +10,8 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 
 load_dotenv()
-
-mcp=FastMCP("Useful")
+port= int(os.environ.get("PORT", 8000))
+mcp=FastMCP("Useful",host="0.0.0.0",port=port)
 
 @mcp.tool()
 def get_system_time(format: str = "%Y-%m-%d %H:%M:%S"):
