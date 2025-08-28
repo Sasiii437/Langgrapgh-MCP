@@ -9,12 +9,12 @@ import streamlit as st
 
 # Load environment variables
 load_dotenv()
-
+RENDER_URL=os.getenv("RENDER_URL")
 # Initialize LLM and MCP client
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=os.getenv("GOOGLE_API"))
 client = MultiServerMCPClient({
     "server": {
-        "url": "{RENDER_URL}/mcp",  
+        "url": f"{RENDER_URL}/mcp",  
         "transport": "streamable_http",
     }
 })
@@ -35,7 +35,7 @@ async def run_agent(query):
 # Streamlit UI
 st.set_page_config(page_title="LangGraph MCP Agent", layout="centered")
 st.title("🔧 LangGraph MCP Agent Interface")
-st.markdown("Interact with a Gemini-powered agent that dynamically uses tools exposed via your MCP server. Enter a prompt below and let the agent decide how to respond using available tools.")
+st.markdown("Interact with a Gemini-powered LangGraph agent that dynamically uses tools exposed via our MCP server. Enter a prompt below and let the agent decide how to respond using available tools ( Youtube Summariser - video link, Web search , Current date & Time).")
 
 # Input box and button
 user_input = st.text_input("💬 Enter your prompt", placeholder="e.g. What's the weather in NYC?")
