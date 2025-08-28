@@ -39,7 +39,7 @@ async def run_agent(query):
 
 # Streamlit UI
 st.set_page_config(page_title="LangGraph MCP Agent", layout="centered")
-st.title("🔧 LangGraph MCP Agent Interface")
+st.title("LangGraph Agent with MCP server")
 st.markdown(
     "Interact with a Gemini-powered LangGraph agent that dynamically uses tools exposed via our MCP server. "
     "Enter a prompt below and let the agent decide how to respond using available tools like:\n"
